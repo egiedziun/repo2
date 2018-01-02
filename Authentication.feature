@@ -16,7 +16,7 @@ Feature: Authentication
     And I press Sign up
     Then I can see account details view – name, surname, email address, mailing address
   Examples:
-  |login									                                      | password|
+  |login									                    | password|
   |admin_pensjonacik_rodzinny1@pensjonacikrodzinny.szczecin.pl  |pass!egIed9|
   |admin_pensjonacik_rodzinny10@pensjonacikrodzinny.szczecin.pl |pass!egIed9|
 
@@ -34,7 +34,7 @@ Feature: Authentication
     And I press Sign up
     Then I should see "Authentication failed. Login or password are incorrect."
     Examples:
-      |login									                                        |password	|
+      |login									                      |password	|
       |a@pensjonacikrodzinny.szczecin.pl                              |pass!EGIed9|
       |admin                                                          |pass!EGIed9|
       |admin_pensjonacik_rodzinny1@pensjonacikrodzinny.szczecin.pl    |pass!egiedz|
@@ -43,15 +43,13 @@ Feature: Authentication
       |adminpensjonacikrodzinny(at)pensjonacikrodzinny.szczecin.pl    |pass!egIed9|
       |adminpensjonacikrodzinny@pensjonacikrodzinny.szczecinpl        |pass!egIed9|
 
-  Scenario: server request
+  Scenario server request
 
     Given  I am not registered user
     When I fill login field with “admin_pensjonacik_rodzinny@pensjonacikrodzinny.szczecin.pl"
     And I fill password field with "pass!egIed9"
     And I press Sign up
     Then  I should see "404:file not found"
-
-
 
 
 
