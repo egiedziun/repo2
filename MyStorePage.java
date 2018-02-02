@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.openqa.selenium.support.How.CLASS_NAME;
 
+
 public class MyStorePage {
     private WebDriver driver;
 
@@ -30,4 +31,5 @@ public class MyStorePage {
         Assert.assertEquals("YOUR PERSONAL INFORMATION", personalInfo.getText());
         Assert.assertEquals("merida20@o2.pl", email.getAttribute("value"));
     }
+
 }
